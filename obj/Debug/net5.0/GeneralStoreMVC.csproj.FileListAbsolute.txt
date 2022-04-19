@@ -174,3 +174,8 @@
 /Users/guccigod/Documents/SD134ImmersionFT/generalStoreMvc/GeneralStoreMVC/GeneralStoreMVC/obj/Debug/net5.0/Razor/Views/Product/Details.cshtml.g.cs
 /Users/guccigod/Documents/SD134ImmersionFT/generalStoreMvc/GeneralStoreMVC/GeneralStoreMVC/obj/Debug/net5.0/Razor/Views/Product/Edit.cshtml.g.cs
 /Users/guccigod/Documents/SD134ImmersionFT/generalStoreMvc/GeneralStoreMVC/GeneralStoreMVC/obj/Debug/net5.0/Razor/Views/Product/Index.cshtml.g.cs
+/Users/guccigod/Documents/SD134ImmersionFT/generalStoreMvc/GeneralStoreMVC/GeneralStoreMVC/obj/Debug/net5.0/Razor/Views/Transaction/Create.cshtml.g.cs
+/Users/guccigod/Documents/SD134ImmersionFT/generalStoreMvc/GeneralStoreMVC/GeneralStoreMVC/obj/Debug/net5.0/Razor/Views/Transaction/Delete.cshtml.g.cs
+/Users/guccigod/Documents/SD134ImmersionFT/generalStoreMvc/GeneralStoreMVC/GeneralStoreMVC/obj/Debug/net5.0/Razor/Views/Transaction/Details.cshtml.g.cs
+/Users/guccigod/Documents/SD134ImmersionFT/generalStoreMvc/GeneralStoreMVC/GeneralStoreMVC/obj/Debug/net5.0/Razor/Views/Transaction/Edit.cshtml.g.cs
+/Users/guccigod/Documents/SD134ImmersionFT/generalStoreMvc/GeneralStoreMVC/GeneralStoreMVC/obj/Debug/net5.0/Razor/Views/Transaction/Index.cshtml.g.cs

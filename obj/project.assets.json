@@ -7483,7 +7483,7 @@
       "outputPath": "/Users/guccigod/Documents/SD134ImmersionFT/generalStoreMvc/GeneralStoreMVC/GeneralStoreMVC/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/guccigod/.nuget/NuGet/NuGet.Config"
+        "/Users/guccigod/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
