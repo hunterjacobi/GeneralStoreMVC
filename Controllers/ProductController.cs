@@ -43,6 +43,13 @@ namespace GeneralStoreMVC.Controllers
             }
 
             var product = await _context.Products
+                .Select(p => new ProductDetailModel
+                {
+                    Id = p.Id,
+                    Name = p.Name,
+                    QuantityInStock = p.QuantityInStock,
+                    Price = p.Price
+                })
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (product == null)
             {
@@ -63,15 +70,20 @@ namespace GeneralStoreMVC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,QuantityInStock,Price")] Product product)
+        public async Task<IActionResult> Create([Bind("Name,QuantityInStock,Price")] ProductCreateModel model)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(product);
+                _context.Add(new Product
+                {
+                    Name = model.Name,
+                    Price = model.Price,
+                    QuantityInStock = model.QuantityInStock,
+                });
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(product);
+            return View(model);
         }
 
         // GET: Product/Edit/5
@@ -82,7 +94,15 @@ namespace GeneralStoreMVC.Controllers
                 return NotFound();
             }
 
-            var product = await _context.Products.FindAsync(id);
+            var product = await _context.Products
+                .Select(p => new ProductEditModel
+                {
+                    Id = p.Id,
+                    Name = p.Name,
+                    Price = p.Price,
+                    QuantityInStock = p.QuantityInStock
+                })
+                .FirstOrDefaultAsync(p => p.Id == id);
             if (product == null)
             {
                 return NotFound();
@@ -95,15 +115,19 @@ namespace GeneralStoreMVC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,QuantityInStock,Price")] Product product)
+        public async Task<IActionResult> Edit(int id, [Bind("Name,QuantityInStock,Price")] ProductEditModel model)
         {
-            if (id != product.Id)
+            var product = await _context.Products.FindAsync(id);
+            if (product == null)
             {
                 return NotFound();
             }
 
             if (ModelState.IsValid)
             {
+                product.Name = model.Name;
+                product.Price = model.Price;
+                product.QuantityInStock = model.QuantityInStock;
                 try
                 {
                     _context.Update(product);
@@ -134,6 +158,13 @@ namespace GeneralStoreMVC.Controllers
             }
 
             var product = await _context.Products
+                .Select(p => new ProductDetailModel
+                {
+                    Id = p.Id,
+                    Price = p.Price,
+                    Name = p.Name,
+                    QuantityInStock = p.QuantityInStock,
+                })
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (product == null)
             {
