@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 #nullable disable
 
@@ -16,7 +17,7 @@ namespace GeneralStoreMVC.Data
         public string Name { get; set; }
         public int QuantityInStock { get; set; }
         public double Price { get; set; }
-
+        [JsonIgnore]
         public virtual ICollection<Transaction> Transactions { get; set; }
     }
 }

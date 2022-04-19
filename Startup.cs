@@ -28,6 +28,7 @@ namespace GeneralStoreMVC
             services.AddDbContext<GeneralStoreDbContext>(
                 options => options.UseSqlServer(Configuration["ConnectionStrings:GSLocal"]));
             services.AddControllersWithViews();
+            services.AddServerSideBlazor();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -55,6 +56,7 @@ namespace GeneralStoreMVC
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapBlazorHub();
             });
         }
     }
